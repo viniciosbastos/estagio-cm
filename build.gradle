@@ -1,0 +1,69 @@
+plugins {
+    id 'java'
+    id 'war'
+}
+
+archivesBaseName = "Estagio-CM"
+group 'com.casamagalhaes'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+project.webAppDirName = 'WebContent'
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    all.collect { configuration ->
+        configuration.exclude group: 'commons-logging'
+        configuration.exclude group: 'javax.activation'
+    }
+}
+
+def springModules = [
+        "spring-core",
+        "spring-context",
+        "spring-context-support",
+        "spring-aop",
+        "spring-aspects",
+        "spring-tx",
+        "spring-beans",
+        "spring-expression",
+        "spring-jdbc",
+        "spring-orm",
+        "spring-web"
+]
+
+def sl4jModules = [
+        "slf4j-api",
+        "jul-to-slf4j",
+        "jcl-over-slf4j",
+        "slf4j-log4j12"
+]
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    // https://mvnrepository.com/artifact/br.com.caelum/vraptor
+    compile group: 'br.com.caelum', name: 'vraptor', version: '3.5.2'
+    springModules.each {
+        compile("org.springframework:${it}:4.3.4.RELEASE")
+    }
+
+    sl4jModules.each { compile "org.slf4j:${it}:1.7.5" }
+
+    compile 'org.hibernate:hibernate-entitymanager:4.2.12.Final'
+    compile "javax.servlet:javax.servlet-api:3.0.1"
+    compile "jstl:jstl:1.2"
+    compile "org.postgresql:postgresql:42.1.4"
+
+}
+
+tasks.withType(JavaCompile) {
+    options.debug = true
+    options.debugOptions.debugLevel = "source,lines,vars"
+    options.encoding = "UTF-8"
+}
