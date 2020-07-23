@@ -1,6 +1,17 @@
 # estagio-cm
 Repositório para atividades/exercícios dos estagiários da CM
 
+## Setup do projeto
+1. Realizar o fork do projeto para seu repo;
+2. Realizar o clone;
+3. No IntelliJ, importar gradle project. No Eclipse (com plugin *Buildship Gradle Integration*), Importar > Gradle > Existing Gradle project.
+4. Para banco de dados, instalar o PostgreSQL. As configurações ficam no arquivo `database.properties`. Por padrão está apontando pra uma base chamada estagiocm, que pode ser criado na base PostgreSQL local com esse mesmo nome.
+5. Configurar Tomcat 8.5.53. na IDE (IntelliJ ou Eclipse);
+6. Se o depoy da aplicação estiver devidamente configurado, ao iniciar o Tomcat e acessar localhost:8080 com a msg:  
+```
+It works!! Se apresente Estagiário! 
+```
+
 ## Tarefa 1 - CRUD Usuário
 ### Deve ser criada uma página contendo um formulário com os seguintes campos:
 1. Nome (Texto);

@@ -8,5 +8,10 @@
     ser feitas no Spring. -->
 
     <persistence-unit name="estagioCM-PU">
+        <properties>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hbm2ddl.auto" value="create"/>
+        </properties>
     </persistence-unit>
 </persistence>
