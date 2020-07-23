@@ -20,6 +20,11 @@ It works!! Se apresente Estagiário!
 4. Botão salvar (grava os dados no banco de dados);
 5. Botão pesquisar (usa as informações digitadas nos campos e pesquisa no banco de dados, listando em uma tabela abaixo os registros encontrados);
 
+## Tarefa Bônus - Autenticação
+### Implementar mecanismo de autenticação onde:
+1. Tela inicial da aplicação é uma tela de login (usuario e senha);
+2. Somente usuarios logados poderão acessar as páginas da aplicação;
+
 ### Detalhes da aplicação
 - Usar o modelo de camadas que foi demonstrado na TechMeeting (Controller, Service, Repository, Model)
 - Usar JSPs e Javascript com JQuery;
