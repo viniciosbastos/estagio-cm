@@ -7,7 +7,7 @@
 </head>
 <body>
 	<span id="ctx" style="display: none">${ctx}</span>
-	<form action="/greeting" >
+	<form >
 		It works!! Se apresente ${variable}
 		<input type="text" id="nome" name="estagiario.nome" />
 		<input id="btn_vai" type="button" value="Vai!" />
