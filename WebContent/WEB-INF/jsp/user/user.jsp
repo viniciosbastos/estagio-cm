@@ -5,6 +5,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
         <title>Casa Magalhães - Estagiários Project</title>
         <jsp:include page="../common/jstl.jsp"/>
     </head>
@@ -28,7 +29,7 @@
                     <input type="button" class="btn btn-primary" id="btn_search" value="Pesquisar"/>
                 </div>
             </form>
-            <div class="my-2">
+            <div class="my-3">
                 <c:if test="${empty usuarios }">
                     <div class="alert alert-secondary" role="alert">
                         Nenhum usuário encontrado.
@@ -48,6 +49,10 @@
                                 <td>${user.id}</td>
                                 <td>${user.name}</td>
                                 <td>${user.birthday}</td>
+                                <td>
+                                    <a href="#"><i class="fa fa-pencil mx-1" aria-hidden="true"></i></a>
+                                    <a href="#"><i class="fa fa-trash mx-1" aria-hidden="true"></i></a>
+                                </td>
                             </tr>
                         </c:forEach>
                         </tbody>
