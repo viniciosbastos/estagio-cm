@@ -22,7 +22,7 @@ It works!! Se apresente Estagiário!
 
 ## Tarefa Bônus - Autenticação
 ### Implementar mecanismo de autenticação onde:
-1. Tela inicial da aplicação é uma tela de login (usuario e senha);
+1. Tela inicial da aplicação é uma tela de login (user e senha);
 2. Somente usuarios logados poderão acessar as páginas da aplicação;
 
 ### Detalhes da aplicação
