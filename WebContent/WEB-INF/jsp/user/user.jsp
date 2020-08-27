@@ -50,7 +50,7 @@
                                 <td>${user.name}</td>
                                 <td>${user.birthday}</td>
                                 <td>
-                                    <a href="#" id="btn_edit"><i class="fa fa-pencil mx-1" aria-hidden="true"></i></a>
+                                    <a href="/users/create/${user.id}" id="btn_edit" class="search"><i class="fa fa-pencil mx-1" aria-hidden="true"></i></a>
                                     <a href="/users/delete/${user.id}" id="btn_delete" class="delete"><i class="fa fa-trash mx-1" aria-hidden="true"></i></a>
                                 </td>
                             </tr>

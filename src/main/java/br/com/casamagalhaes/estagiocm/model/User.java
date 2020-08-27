@@ -20,6 +20,7 @@ public class User {
     }
 
     public User(UserDTO user) {
+        this.id = user.getId();
         this.name = user.getName();
         this.birthday = user.getBirthday();
         this.password = user.getPassword();

@@ -5,6 +5,7 @@ jQuery(document).ready(function(){
     jQuery("#btn_save").click(function(){
 
         var data = {
+            "user.id": $("#text_id").val(),
             "user.name": $("#text_username").val().toString(),
             "user.birthday": $("#text_birthday").val().toString(),
             "user.password": $("#text_password").val().toString(),

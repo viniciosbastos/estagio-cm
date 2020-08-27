@@ -26,6 +26,12 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     @Override
+    @Transactional
+    public void update(User user) {
+        entityManager.merge(user);
+    }
+
+    @Override
     public List<User> search(String name, String birthday) {
         Criteria c = ((Session) entityManager.getDelegate()).createCriteria(User.class);
         c.add(Restrictions.ilike("name", name, MatchMode.ANYWHERE));

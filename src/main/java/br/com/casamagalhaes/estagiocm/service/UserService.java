@@ -8,6 +8,8 @@ public interface UserService {
 
     void save(User user);
 
+    void update(User user);
+
     List<User> search(String name, String birthday);
 
     User search(Long id);

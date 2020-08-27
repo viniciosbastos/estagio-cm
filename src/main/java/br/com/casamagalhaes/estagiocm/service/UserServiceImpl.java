@@ -20,6 +20,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public void update(User user) {
+        userRepository.update(user);
+    }
+
+    @Override
     public List<User> search(String name, String birthday) {
         return userRepository.search(name, birthday);
     }

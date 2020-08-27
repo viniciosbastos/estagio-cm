@@ -10,27 +10,28 @@
 </head>
 <body>
 <span id="ctx" style="display: none">${ctx}</span>
+<input type="hidden" id="text_id" value="${user.id}" />
 <div class="container">
     <h3>Cadastrar Usuario</h3>
     <form>
         <div class="form-row">
             <div class="form-group col-9">
                 <label for="text_username">Nome</label>
-                <input type="text" class="form-control" name="name" id="text_username" />
+                <input type="text" class="form-control" name="name" id="text_username" value="${user.name}" />
             </div>
             <div class="form-group col-3">
                 <label for="text_birthday">Nascimento</label>
-                <input type="text" class="form-control" name="birthday" id="text_birthday" />
+                <input type="text" class="form-control" name="birthday" id="text_birthday" value="${user.birthday}" />
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-6">
                 <label for="text_password">Senha</label>
-                <input type="text" class="form-control" name="name" id="text_password" />
+                <input type="password" class="form-control" name="name" id="text_password" value="${user.password}" />
             </div>
             <div class="form-group col-6">
                 <label for="text_confirm_password">Confirmar Senha</label>
-                <input type="text" class="form-control" name="birthday" id="text_confirm_password" />
+                <input type="password" class="form-control" name="birthday" id="text_confirm_password" value="${user.password}" />
             </div>
         </div>
         <div class="form-row justify-content-end">

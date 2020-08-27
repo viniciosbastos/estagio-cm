@@ -30,8 +30,14 @@ public class UserController {
         result.include("usuarios", list);
     }
 
-    @Get("/users/create")
-    public void create() {}
+    @Get({"/users/create/{userId}", "/users/create"})
+    public void create(Long userId) {
+        if (!Objects.isNull(userId)) {
+            User user = userService.search(userId);
+            if (!Objects.isNull(user))
+                result.include("user", user);
+        }
+    }
 
     @Post("/users/create")
     @Transactional
@@ -41,7 +47,11 @@ public class UserController {
             result.use(Results.json()).withoutRoot().from(errors).serialize();
             return;
         }
-        userService.save(new User(user));
+        if (Objects.isNull(user.getId())) {
+            userService.save(new User(user));
+        } else {
+            userService.update(new User(user));
+        }
         result.use(Results.json()).withoutRoot().from("/users").serialize();
     }
 
