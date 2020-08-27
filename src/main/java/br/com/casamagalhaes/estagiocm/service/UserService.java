@@ -15,4 +15,6 @@ public interface UserService {
     User search(Long id);
 
     void delete(Long uderId);
+
+    boolean validateLogin(String name, String password);
 }

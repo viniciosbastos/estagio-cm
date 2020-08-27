@@ -6,7 +6,7 @@ jQuery(document).ready(function(){
             "user.password": $("#text_password").val().toString(),
         }
         $.post("/login", data, function (result) {
-            console.log(result)
+            window.location.replace(result)
         })
     });
 });

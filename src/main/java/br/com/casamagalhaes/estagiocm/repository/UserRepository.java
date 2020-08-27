@@ -15,4 +15,6 @@ public interface UserRepository {
     User search(Long id);
 
     void delete(User user);
+
+    User validateLogin(String name, String password);
 }

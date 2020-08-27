@@ -13,7 +13,6 @@ jQuery(document).ready(function(){
         }
         var url = '/users/create';
         $.post(url, data, function (data, textStatus, jqXHR) {
-            console.log(data)
             if (Array.isArray(data)) {
                 $("#errors").empty()
                 data.forEach(function (error) {

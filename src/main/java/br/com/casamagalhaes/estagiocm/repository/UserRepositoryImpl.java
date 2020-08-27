@@ -55,4 +55,14 @@ public class UserRepositoryImpl implements UserRepository {
         query.setParameter("id", user.getId());
         query.executeUpdate();
     }
+
+    @Override
+    @Transactional
+    public User validateLogin(String name, String password) {
+        Criteria c = ((Session) entityManager.getDelegate()).createCriteria(User.class);
+        c.add(Restrictions.eq("name", name));
+        c.add(Restrictions.eq("password", password));
+
+        return (User) c.uniqueResult();
+    }
 }
