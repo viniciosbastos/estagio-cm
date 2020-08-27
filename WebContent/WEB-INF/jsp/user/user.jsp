@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
     <head>
@@ -27,6 +28,32 @@
                     <input type="button" class="btn btn-primary" id="btn_search" value="Pesquisar"/>
                 </div>
             </form>
+            <div class="my-2">
+                <c:if test="${empty usuarios }">
+                    <div class="alert alert-secondary" role="alert">
+                        Nenhum usuário encontrado.
+                    </div>
+                </c:if>
+                <c:if test="${not empty usuarios }">
+                    <table class="table table-hover">
+                        <thead>
+                        <th>#</th>
+                        <th>Nome</th>
+                        <th>Data de Nascimento</th>
+                        <th></th>
+                        </thead>
+                        <tbody>
+                        <c:forEach items="${usuarios}" var="user">
+                            <tr>
+                                <td>${user.id}</td>
+                                <td>${user.name}</td>
+                                <td>${user.birthday}</td>
+                            </tr>
+                        </c:forEach>
+                        </tbody>
+                    </table>
+                </c:if>
+            </div>
         </div>
     </body>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

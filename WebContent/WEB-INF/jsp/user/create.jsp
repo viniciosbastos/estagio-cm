@@ -38,8 +38,6 @@
         </div>
     </form>
     <div id="errors"></div>
-        <%--        <div class="alert alert-danger" role="alert">--%>
-    <%--        </div>--%>
 
 </div>
 </body>

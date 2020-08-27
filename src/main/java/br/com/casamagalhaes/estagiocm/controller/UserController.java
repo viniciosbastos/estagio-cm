@@ -6,6 +6,7 @@ import br.com.casamagalhaes.estagiocm.dto.UserDTO;
 import br.com.casamagalhaes.estagiocm.model.User;
 import br.com.casamagalhaes.estagiocm.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Objects;
@@ -23,14 +24,17 @@ public class UserController {
     }
 
     @Get("/users")
+    @Transactional
     public void user() {
-
+        List<User> list = userService.search("", "");
+        result.include("usuarios", list);
     }
 
     @Get("/users/create")
     public void create() {}
 
     @Post("/users/create")
+    @Transactional
     public void create(UserDTO user) {
         List<String> errors = user.validate();
         if (errors.size() > 0) {
