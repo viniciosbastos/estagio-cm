@@ -1,5 +1,7 @@
 jQuery(document).ready(function(){
 
+    $("#text_birthday").mask("99/99/9999")
+
     jQuery("#btn_save").click(function(){
 
         var data = {

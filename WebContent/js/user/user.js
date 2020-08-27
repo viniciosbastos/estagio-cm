@@ -2,9 +2,7 @@ jQuery(document).ready(function(){
 
     jQuery("#btn_save").click(function(){
 
-        console.log($("#text_username").val())
-        console.log($("#text_birthday").val())
-        console.log($("#text_password").val())
+        $("#text_birthday").mask("99/99/9999")
 
         var data = {
             "user.name": $("#text_username").val().toString(),
