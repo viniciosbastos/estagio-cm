@@ -18,12 +18,11 @@ public class LoginController {
 
     private LoggedUser loggedUser;
 
-    @Autowired
     private UserService userService;
 
-    private LoginController(Result result, LoggedUser loggedUser) {
+    private LoginController(Result result, UserService userService) {
         this.result = result;
-        this.loggedUser = loggedUser;
+        this.userService = userService;
     }
 
     @Get("/")
