@@ -1,17 +1,21 @@
 jQuery(document).ready(function(){
 
-    jQuery("#btn_save").click(function(){
+    $("#text_birthday").mask("99/99/9999")
 
-        $("#text_birthday").mask("99/99/9999")
+    jQuery("#btn_search").click(function(){
 
-        var data = {
-            "user.name": $("#text_username").val().toString(),
-            "user.birthday": $("#text_birthday").val().toString(),
-            "user.password": $("#text_password").val().toString()
-        }
-        var url = '/users/save';
-        $.post(url, data, function (data, textStatus, jqXHR) {
-            jQuery("#resposta").append("Bem vindo, " + data.estagiario.nome + "! Tá salvo!");
-        })
+    });
+
+    $(".delete").on('click',function (event) {
+        event.preventDefault()
+        const url = $(this).attr("href")
+        const row = $(this).closest("tr")
+        $.ajax({
+            url: url,
+            type: 'DELETE',
+            success: function(result) {
+                row.remove()
+            }
+        });
     });
 });

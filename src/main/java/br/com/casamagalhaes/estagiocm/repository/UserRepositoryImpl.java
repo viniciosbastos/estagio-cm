@@ -1,8 +1,8 @@
 package br.com.casamagalhaes.estagiocm.repository;
 
-import br.com.casamagalhaes.estagiocm.model.Estagiario;
 import br.com.casamagalhaes.estagiocm.model.User;
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Restrictions;
@@ -11,7 +11,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.List;
 import java.util.Objects;
 
@@ -34,5 +33,19 @@ public class UserRepositoryImpl implements UserRepository {
             c.add(Restrictions.eq("birthday", birthday));
 
         return c.list();
+    }
+
+    @Override
+    public User search(Long id) {
+        return entityManager.find(User.class, id);
+    }
+
+    @Override
+    @Transactional
+    public void delete(User user) {
+        Session session = ((Session) entityManager.getDelegate());
+        Query query = session.createQuery("delete from User u where id = :id");
+        query.setParameter("id", user.getId());
+        query.executeUpdate();
     }
 }

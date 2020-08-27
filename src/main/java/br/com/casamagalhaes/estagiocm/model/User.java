@@ -2,13 +2,11 @@ package br.com.casamagalhaes.estagiocm.model;
 
 import br.com.casamagalhaes.estagiocm.dto.UserDTO;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Objects;
 
-@Entity(name = "cm_user")
+@Entity
+@Table(name = "cm_user")
 public class User {
 
     @Id

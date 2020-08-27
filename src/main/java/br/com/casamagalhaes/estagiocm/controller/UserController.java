@@ -44,4 +44,10 @@ public class UserController {
         userService.save(new User(user));
         result.use(Results.json()).withoutRoot().from("/users").serialize();
     }
+
+    @Delete("/users/delete/{userId}")
+    public void delete(Long userId) {
+        userService.delete(userId);
+        result.nothing();
+    }
 }

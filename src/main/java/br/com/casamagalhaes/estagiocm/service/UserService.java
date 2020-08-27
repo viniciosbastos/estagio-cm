@@ -9,4 +9,8 @@ public interface UserService {
     void save(User user);
 
     List<User> search(String name, String birthday);
+
+    User search(Long id);
+
+    void delete(Long uderId);
 }

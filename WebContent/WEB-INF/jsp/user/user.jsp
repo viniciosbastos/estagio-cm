@@ -50,8 +50,8 @@
                                 <td>${user.name}</td>
                                 <td>${user.birthday}</td>
                                 <td>
-                                    <a href="#"><i class="fa fa-pencil mx-1" aria-hidden="true"></i></a>
-                                    <a href="#"><i class="fa fa-trash mx-1" aria-hidden="true"></i></a>
+                                    <a href="#" id="btn_edit"><i class="fa fa-pencil mx-1" aria-hidden="true"></i></a>
+                                    <a href="/users/delete/${user.id}" id="btn_delete" class="delete"><i class="fa fa-trash mx-1" aria-hidden="true"></i></a>
                                 </td>
                             </tr>
                         </c:forEach>
@@ -60,11 +60,11 @@
                 </c:if>
             </div>
         </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+        <script type="text/javascript" src="${ctx}js/user/user.js"></script>
     </body>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
-    <script type="text/javascript" src="${ctx}js/user/user.js"></script>
 
 </html>
