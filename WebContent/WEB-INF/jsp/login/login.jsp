@@ -24,7 +24,7 @@
             />
         </div>
         <div class="form-row justify-content-end">
-            <input type="button" class="btn btn-primary btn-block" id="btn_search" value="Pesquisar"/>
+            <input type="button" class="btn btn-primary btn-block" id="btn_login" value="Entrar"/>
         </div>
     </form>
 </div>
@@ -32,7 +32,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
-<script type="text/javascript" src="${ctx}js/user/user.js"></script>
+<script type="text/javascript" src="${ctx}/js/login/login.js"></script>
 </body>
 
 </html>
