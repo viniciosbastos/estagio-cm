@@ -32,10 +32,11 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     @Override
+    @Transactional
     public List<User> search(String name, String birthday) {
         Criteria c = ((Session) entityManager.getDelegate()).createCriteria(User.class);
-        c.add(Restrictions.ilike("name", name, MatchMode.ANYWHERE));
-        if (!Objects.equals(birthday, ""))
+        c.add(Restrictions.ilike("name", Objects.isNull(name)?"":name, MatchMode.ANYWHERE));
+        if (!Objects.isNull(birthday))
             c.add(Restrictions.eq("birthday", birthday));
 
         return c.list();

@@ -23,11 +23,14 @@ public class UserController {
         this.result = result;
     }
 
-    @Get("/users")
-    @Transactional
-    public void user() {
-        List<User> list = userService.search("", "");
+    @Get("/users/search")
+    public void list(UserDTO user) {
+        List<User> list = userService.search(user.getName(), user.getBirthday());
         result.include("usuarios", list);
+    }
+
+    @Get("/users")
+    public void user() {
     }
 
     @Get({"/users/create/{userId}", "/users/create"})

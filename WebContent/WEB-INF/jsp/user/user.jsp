@@ -17,11 +17,12 @@
                 <div class="form-row">
                     <div class="form-group col-9">
                         <label for="text_username">Nome</label>
-                        <input type="text" class="form-control" name="name" id="text_username" />
+                        <input type="text" class="form-control" name="name" id="text_username" value=""/>
                     </div>
                     <div class="form-group col-3">
                         <label for="text_birthday">Nascimento</label>
-                        <input type="text" class="form-control" name="birthday" id="text_birthday" />
+                        <input type="text" class="form-control" name="birthday" id="text_birthday" value=""
+                        />
                     </div>
                 </div>
                 <div class="form-row justify-content-end">
@@ -29,35 +30,35 @@
                     <input type="button" class="btn btn-primary" id="btn_search" value="Pesquisar"/>
                 </div>
             </form>
-            <div class="my-3">
-                <c:if test="${empty usuarios }">
-                    <div class="alert alert-secondary" role="alert">
-                        Nenhum usuário encontrado.
-                    </div>
-                </c:if>
-                <c:if test="${not empty usuarios }">
-                    <table class="table table-hover">
-                        <thead>
-                        <th>#</th>
-                        <th>Nome</th>
-                        <th>Data de Nascimento</th>
-                        <th></th>
-                        </thead>
-                        <tbody>
-                        <c:forEach items="${usuarios}" var="user">
-                            <tr>
-                                <td>${user.id}</td>
-                                <td>${user.name}</td>
-                                <td>${user.birthday}</td>
-                                <td>
-                                    <a href="/users/create/${user.id}" id="btn_edit" class="search"><i class="fa fa-pencil mx-1" aria-hidden="true"></i></a>
-                                    <a href="/users/delete/${user.id}" id="btn_delete" class="delete"><i class="fa fa-trash mx-1" aria-hidden="true"></i></a>
-                                </td>
-                            </tr>
-                        </c:forEach>
-                        </tbody>
-                    </table>
-                </c:if>
+            <div id="result" class="my-3">
+<%--                <c:if test="${empty usuarios }">--%>
+<%--                    <div class="alert alert-secondary" role="alert">--%>
+<%--                        Nenhum usuário encontrado.--%>
+<%--                    </div>--%>
+<%--                </c:if>--%>
+<%--                <c:if test="${not empty usuarios }">--%>
+<%--                    <table class="table table-hover">--%>
+<%--                        <thead>--%>
+<%--                        <th>#</th>--%>
+<%--                        <th>Nome</th>--%>
+<%--                        <th>Data de Nascimento</th>--%>
+<%--                        <th></th>--%>
+<%--                        </thead>--%>
+<%--                        <tbody>--%>
+<%--                        <c:forEach items="${usuarios}" var="user">--%>
+<%--                            <tr>--%>
+<%--                                <td>${user.id}</td>--%>
+<%--                                <td>${user.name}</td>--%>
+<%--                                <td>${user.birthday}</td>--%>
+<%--                                <td>--%>
+<%--                                    <a href="/users/create/${user.id}" id="btn_edit" class="search"><i class="fa fa-pencil mx-1" aria-hidden="true"></i></a>--%>
+<%--                                    <a href="/users/delete/${user.id}" id="btn_delete" class="delete"><i class="fa fa-trash mx-1" aria-hidden="true"></i></a>--%>
+<%--                                </td>--%>
+<%--                            </tr>--%>
+<%--                        </c:forEach>--%>
+<%--                        </tbody>--%>
+<%--                    </table>--%>
+<%--                </c:if>--%>
             </div>
         </div>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
