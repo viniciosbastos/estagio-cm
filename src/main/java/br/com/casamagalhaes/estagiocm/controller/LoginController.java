@@ -35,10 +35,15 @@ public class LoginController {
             boolean validUser = userService.validateLogin(user.getName(), user.getPassword());
             if (validUser) {
                 loggedUser.login(user.getName());
-//                result.redirectTo(UserController.class).user();
                 result.use(Results.json()).withoutRoot().from("/users").serialize();
             }
             result.nothing();
         }
+    }
+
+    @Get("/users/logout")
+    public void logout() {
+        loggedUser.logout();
+        result.redirectTo(this).login();
     }
 }

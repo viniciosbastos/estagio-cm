@@ -23,4 +23,7 @@ public class LoggedUser implements Serializable {
         this.name = name;
     }
 
+    public void logout() {
+        this.name = null;
+    }
 }

@@ -1,5 +1,7 @@
 jQuery(document).ready(function(){
 
+    console.log($("#error").val())
+
     $("#btn_login").click(function() {
         var data = {
             "user.name": $("#text_username").val().toString(),

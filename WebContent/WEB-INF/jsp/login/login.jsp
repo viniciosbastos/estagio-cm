@@ -11,6 +11,7 @@
 </head>
 <body>
 <span id="ctx" style="display: none">${ctx}</span>
+<input type="hidden" id="error" value="${error}"/>
 <div class="container col-5 my-5">
     <h3>Login</h3>
     <form>
@@ -20,7 +21,7 @@
         </div>
         <div class="form-group">
             <label for="text_password">Senha</label>
-            <input type="text" class="form-control" name="birthday" id="text_password" value=""
+            <input type="password" class="form-control" name="birthday" id="text_password" value=""
             />
         </div>
         <div class="form-row justify-content-end">

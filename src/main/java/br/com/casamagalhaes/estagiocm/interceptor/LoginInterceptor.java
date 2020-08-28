@@ -31,8 +31,9 @@ public class LoginInterceptor implements Interceptor {
     public void intercept(InterceptorStack stack, ResourceMethod method, Object resourceInstance) throws InterceptionException {
         String uri = httpRequest.getRequestURI();
         if (!(Objects.equals(uri, "/") || Objects.equals(uri, "/login"))
-                && loggedUser.getName() == null)
+                && loggedUser.getName() == null) {
             result.redirectTo(LoginController.class).login();
+        }
         else {
             stack.next(method, resourceInstance);
         }

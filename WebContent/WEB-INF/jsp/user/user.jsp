@@ -10,8 +10,11 @@
 </head>
 <body>
 <span id="ctx" style="display: none">${ctx}</span>
-<div class="container">
-    <h3>Gerenciar Usuarios</h3>
+<div class="container my-5">
+    <div class="row">
+        <h3>Gerenciar Usuarios</h3>
+        <a href="/users/logout" class="ml-auto">Logout</a>
+    </div>
     <form>
         <div class="form-row">
             <div class="form-group col-9">

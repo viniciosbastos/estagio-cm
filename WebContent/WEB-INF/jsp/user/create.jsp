@@ -11,7 +11,7 @@
 <body>
 <span id="ctx" style="display: none">${ctx}</span>
 <input type="hidden" id="text_id" value="${user.id}" />
-<div class="container">
+<div class="container my-5">
     <h3>Cadastrar Usuario</h3>
     <form>
         <div class="form-row">
